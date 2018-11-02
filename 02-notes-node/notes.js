@@ -1,4 +1,5 @@
 console.log('Notes File');
+console.log('Test');
 
 const addNote = (title, body) => {
     console.log('Adding note', title, body);
