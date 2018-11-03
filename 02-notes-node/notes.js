@@ -13,7 +13,7 @@ const getNote = (title) => {
     console.log('Reading note', title);
 };
 
-const remove = (title) => {
+var remove = (title) => {
     console.log('Removing note', title);
 };
 
