@@ -1,6 +1,3 @@
-console.log('Notes File');
-console.log('Test');
-
 const addNote = (title, body) => {
     console.log('Adding note', title, body);
 };
@@ -13,7 +10,7 @@ const getNote = (title) => {
     console.log('Reading note', title);
 };
 
-var remove = (title) => {
+const remove = (title) => {
     console.log('Removing note', title);
 };
 
