@@ -1,19 +1,25 @@
 const fs = require('fs');
 
+const fetchNotes = () => {
+    try {
+        const notesString = fs.readFileSync('notes-data.json');
+        return JSON.parse(notesString);
+    } catch (e) {
+        return [];
+    }
+};
+
+const saveNotes = (notes) => {
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+};
+
 const addNote = (title, body) => {
 
-    let notes = [];
+    let notes = fetchNotes();
     const note = {
       title,
       body
     };
-
-    try {
-        const notesString = fs.readFileSync('notes-data.json');
-        notes = JSON.parse(notesString);
-    } catch (e) {
-
-    }
 
     /* Same as below using ES6 arrow functions.
     let duplicateNotes = notes.filter((note) => {
@@ -25,7 +31,8 @@ const addNote = (title, body) => {
 
     if (duplicateNotes.length === 0) {
         notes.push(note);
-        fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+        saveNotes(notes);
+        return note;
     }
 };
 
