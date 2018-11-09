@@ -1,4 +1,4 @@
-console.log('Starting app.js');
+console.log('Start app.js');
 
 const fs = require('fs');
 const _ = require('lodash');
