@@ -14,6 +14,12 @@ console.log('Yargs', argv);
 
 if (command === 'add') {
     const note = notes.addNote(argv.title, argv.body);
+
+    if(note) {
+        console.log(`Note Created. Note Title: ${note.title}, Note Body: ${note.body}`);
+    } else {
+        console.log('There is a note with this title already saved.');
+    }
 } else if (command === 'add') {
     console.log('Listing all notes.')
 } else if (command === 'list') {
