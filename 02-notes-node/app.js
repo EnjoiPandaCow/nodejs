@@ -29,7 +29,7 @@ if (command === 'add') {
 } else if (command === 'remove') {
     notes.remove(argv.title);
 } else {
-    console.log('Command not recognised');
+    console.log('Not recognised');
 }
 
 
